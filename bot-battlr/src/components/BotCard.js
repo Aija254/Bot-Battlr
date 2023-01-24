@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 const botTypeClasses = {
   Assault: "icon military",
@@ -10,21 +9,13 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot, userBots, setUserBots }) {
-  function removeUserBot(arrayOfUserBots){
-    let id = bot.id
-    const newBotArmy = userBots.filter((bot) => bot.id !== id);
-    setUserBots(newBotArmy);
-  }
-  function dischargeBot(id=`${bot.id}`){
-    axios.delete(`https://vercel-json-server-black.vercel.app/bots/${id}`).then(alert("Permanently Discharged!"))
-  }
+function BotCard({ bot, handleBotActionClick }) {
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => {removeUserBot(`${userBots}`)}}
+        onClick={() => handleBotActionClick(bot, "show-bot-specs")}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
@@ -56,8 +47,9 @@ function BotCard({ bot, userBots, setUserBots }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() => {dischargeBot()}
-                }
+                onClick={(event)=>{
+                  event.stopPropagation()
+                  {handleBotActionClick(bot, "release-bot")}}}
               >
                 x
               </button>
