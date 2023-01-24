@@ -20,7 +20,7 @@ Aftr ubundling the project:
 * Run <code>npm install</code> in your terminal
 * In a new terminal, run <code>npm start</code>. This will run your React app on port 3000.
 
-Make sure to open http://localhost:3000/bots in the browser to verify that your backend is working before you proceed.
+Make sure to open http://localhost:8002/bots in the browser to verify that your backend is working before you proceed.
 
 #### Getting Started with Create React App
 
