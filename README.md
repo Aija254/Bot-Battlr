@@ -125,7 +125,7 @@ Example Response:
 {}
 ```
 ## Author and License
-This project was contributed to by: <a href="https://github.com/Aija254"></a>
+This project was contributed to by: <a href="https://github.com/Aija254">Eugene Aija</a>
 
 ### License
-This project is licensed under ISC
+This project is licensed under MIT
